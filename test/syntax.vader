@@ -900,7 +900,7 @@ Given typescript (identifier starting with 'function'):
   [functionName]
 Execute:
   AssertEqual 'typescriptIdentifierName', SyntaxAt(1, 2)
-  AssertEqual 'typescriptArray', SyntaxAt(2, 2)
+  AssertEqual 'typescriptIdentifierName', SyntaxAt(2, 2)
 
 Given typescript (labeled tuple):
   type Range = [start: number, end: number];
