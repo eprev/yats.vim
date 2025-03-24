@@ -235,7 +235,7 @@ Given typescript (consistent value highlight):
   }
   var b
 Execute:
-  AssertEqual 'typescriptIdentifierName', SyntaxAt(2, 54)
+  AssertEqual 'typescriptFuncCallArg', SyntaxAt(2, 54)
   AssertEqual 'typescriptVariable', SyntaxAt(4, 1)
 
 Given typescript (consistent value highlight for global):
@@ -545,7 +545,7 @@ Given typescript (assign arrow func in expression paren):
   const b = (a = () => void 0)
   const c = 1
 Execute:
-  AssertEqual 'typescriptParens', SyntaxAt(2, 13)
+  AssertEqual 'typescriptParenExp', SyntaxAt(2, 13)
   AssertEqual 'typescriptArrowFunc', SyntaxAt(2, 19)
   AssertEqual 'typescriptVariable', SyntaxAt(3, 1)
 
@@ -554,7 +554,7 @@ Given typescript (assign arrow func with return type in expression paren):
   const b = (a = (): void => void 0)
   const c = 1
 Execute:
-  AssertEqual 'typescriptIdentifierName', SyntaxAt(2, 13)
+  AssertEqual 'typescriptParenExp', SyntaxAt(2, 13)
   AssertEqual 'typescriptPredefinedType', SyntaxAt(2, 20)
   AssertEqual 'typescriptArrowFunc', SyntaxAt(2, 25)
   AssertEqual 'typescriptVariable', SyntaxAt(3, 1)
@@ -899,7 +899,7 @@ Given typescript (identifier starting with 'function'):
   (functionName)
   [functionName]
 Execute:
-  AssertEqual 'typescriptParenExp', SyntaxAt(1, 2)
+  AssertEqual 'typescriptIdentifierName', SyntaxAt(1, 2)
   AssertEqual 'typescriptArray', SyntaxAt(2, 2)
 
 Given typescript (labeled tuple):
@@ -1160,4 +1160,4 @@ Execute:
   AssertEqual 'typescriptPromiseMethod', SyntaxAt(13, 7)
   AssertEqual 'typescriptArrowFunc', SyntaxAt(13, 28)
   AssertEqual 'typescriptPromiseMethod', SyntaxAt(14, 7)
-  AssertEqual 'typescriptFuncCallArg', SyntaxAt(14, 13)
+  AssertEqual 'typescriptIdentifierName', SyntaxAt(14, 13)
