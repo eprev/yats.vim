@@ -235,7 +235,7 @@ Given typescript (consistent value highlight):
   }
   var b
 Execute:
-  AssertEqual 'typescriptFuncCallArg', SyntaxAt(2, 54)
+  AssertEqual 'typescriptIdentifierName', SyntaxAt(2, 54)
   AssertEqual 'typescriptVariable', SyntaxAt(4, 1)
 
 Given typescript (consistent value highlight for global):
@@ -545,7 +545,7 @@ Given typescript (assign arrow func in expression paren):
   const b = (a = () => void 0)
   const c = 1
 Execute:
-  AssertEqual 'typescriptParenExp', SyntaxAt(2, 13)
+  AssertEqual 'typescriptParens', SyntaxAt(2, 13)
   AssertEqual 'typescriptArrowFunc', SyntaxAt(2, 19)
   AssertEqual 'typescriptVariable', SyntaxAt(3, 1)
 
@@ -554,7 +554,7 @@ Given typescript (assign arrow func with return type in expression paren):
   const b = (a = (): void => void 0)
   const c = 1
 Execute:
-  AssertEqual 'typescriptParenExp', SyntaxAt(2, 13)
+  AssertEqual 'typescriptIdentifierName', SyntaxAt(2, 13)
   AssertEqual 'typescriptPredefinedType', SyntaxAt(2, 20)
   AssertEqual 'typescriptArrowFunc', SyntaxAt(2, 25)
   AssertEqual 'typescriptVariable', SyntaxAt(3, 1)
@@ -1024,12 +1024,12 @@ Execute:
   AssertEqual 'typescriptConditionalType', SyntaxAt(1, 36)
   AssertEqual 'typescriptTypeReference', SyntaxAt(1, 38)
 
-Given typescript (ternary in objeect):
+Given typescript (ternary in object):
   const func = a => {
     return { a: b === 'test' ? `${val}` : 'test' }
   }
 Execute:
-  AssertEqual 'typescriptTemplateSubstitution', SyntaxAt(2, 33)
+  AssertEqual 'typescriptIdentifierName', SyntaxAt(2, 33)
   AssertEqual 'typescriptTemplateSB', SyntaxAt(2, 36)
 
 Given typescript (key remapping in mapped types):
